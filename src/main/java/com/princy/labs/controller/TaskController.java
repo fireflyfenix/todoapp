@@ -2,6 +2,7 @@ package com.princy.labs.controller;
 
 import com.princy.labs.model.Task;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -12,4 +13,8 @@ import java.util.List;
 @RestController
 public class TaskController {
 
+    @RequestMapping("/hello")
+    public String hello(@RequestParam(value="name", defaultValue="World") String name) {
+        return "Hello "+name;
+    }
 }
